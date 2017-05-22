@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WebSocket Echo Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script>
+    var ws = new WebSocket("ws://localhost:8181");
+    ws.onopen = function (e) {
+        console.log('Connection to server opened');
+    }
+    function sendMessage() {
+        ws.send(JSON.stringify({
+            speaker: '123',
+            message: document.querySelector('#message').value
+        }));
+    }
+    ws.onmessage = function (e) {
+        // console.log(e)
+        var data = JSON.parse(e.data)
+        document.querySelector('#content').append(`speaker: ${data.speaker}, says: ${data.message}`)
+    }
+    </script>
+</head>
+<style type="text/css">
+    #content{
+        width: 500px;
+        height: 500px;
+        border: black solid 1px;
+    }
+</style>
+<body >
+    <div class="vertical-center">
+        <div class="container">
+            <p>&nbsp;</p>
+            <div id="content"></div>
+            <form role="form" id="chat_form" onsubmit="sendMessage(); return false;">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="message" id="message"
+                           placeholder="Type text to echo in here" value="" />
+                </div>
+                <button type="button" id="send" class="btn btn-primary"
+                        onclick="sendMessage();">
+                    Send!
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
