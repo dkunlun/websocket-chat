@@ -1,0 +1,48 @@
+Arguments: 
+  E:\nodejs\node.exe C:\Users\0156782\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  D:\android\android-sdk-windows\platform-tools;D:\android\android-sdk-windows\tools;D:\Program Files\Java\jdk1.8.0_77\bin;D:\Program Files\Java\jdk1.8.0_77\jre\bin;C:\ProgramData\Oracle\Java\javapath;D:\Python35\Scripts;D:\Python35;E:\app\0147539\product\11.2.0\client_1;E:\app\0147539\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Windows7Master;C:\Program Files\TortoiseSVN\bin;E:\program\apache-maven\bin;C:\Program Files\TortoiseGit\bin;E:\nodejs\;E:\nodejs;C:\Users\0156782\AppData\Roaming\npm
+
+Yarn version: 
+  0.20.3
+
+Node version: 
+  7.10.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "chat",
+    "version": "1.0.0",
+    "description": "a koa2 demo",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start-debug": "node --inspect chat.js",
+      "start": "node chat.js"
+    },
+    "author": "kk",
+    "license": "ISC",
+    "dependencies": {
+      "koa": "^2.2.0",
+      "koa-convert": "^1.2.0",
+      "koa-router": "^7.0.1",
+      "koa-static": "^3.0.0",
+      "ws": "^3.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ETIMEDOUT 151.101.72.162:443
+      at Object.exports._errnoException (util.js:1050:11)
+      at exports._exceptionWithHostPort (util.js:1073:20)
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1093:14)
